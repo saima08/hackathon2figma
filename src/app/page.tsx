@@ -3,7 +3,8 @@
 import { ArrowRight, ShoppingCart, Calendar, MessageSquare  } from "lucide-react";
 import React from "react";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Footer from "./components/Footerr";
+
 
 const products = [
   {

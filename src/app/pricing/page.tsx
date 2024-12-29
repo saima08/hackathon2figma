@@ -5,7 +5,7 @@ import { FaLinkedin, FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 import React, { useState } from "react";
 import PricingFAQs from "../components/Pricingfaqs";
-import Footer from "../components/Footer";
+import Footer from "../components/Footerr";
 export default function PricingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isYearly, setIsYearly] = useState(false);

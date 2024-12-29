@@ -2,7 +2,7 @@
 
 import { Menu, X, Twitter, Facebook, Instagram, Linkedin, Mail, MapPin, Phone, ChevronDown } from "lucide-react";
 import React, { useState } from "react";
-import Footer from "../components/Footer";
+import Footer from "../components/Footerr";
 import Link from "next/link";
 export default function NavbarHero() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

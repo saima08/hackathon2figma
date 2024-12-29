@@ -16,7 +16,7 @@ import {
     ChevronDown,
   } from "lucide-react";
   import React, { useState } from "react";
-import Footer from "../components/Footer";
+import Footer from "../components/Footerr";
 import Link from "next/link";
   export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

@@ -5,7 +5,7 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import React, { useState } from "react";
 import Link from "next/link";
 import ImageGallery from "../components/Imagegallery";
-import Footer from "../components/Footer";
+import Footer from "../components/Footerr";
 export default function HeroWithNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   

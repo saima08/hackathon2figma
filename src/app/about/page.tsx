@@ -4,7 +4,7 @@ import { Menu, X, ArrowRight } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import ImageSection from "../components/Imagesection";
 import TeamSection from "../components/Teamsection";
-import Footer from "../components/Footer";
+import Footer from "../components/Footerr";
 import StatsSection from "../components/Statssection";
 import Link from "next/link";
 
