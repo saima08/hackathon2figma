@@ -1,4 +1,4 @@
-// File: E:\tempalate5\template5Hacathon\src\app\layout.tsx
+// File: C:\Users\HP\Documents\GitHub\hackathon2figma\src\app\layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

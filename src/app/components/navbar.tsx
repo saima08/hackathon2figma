@@ -1,100 +1,166 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";  // Import Link from Next.js
-import user from "@/images/Vector (12).png";
-import search from "@/images/icn settings icn-xs (6).png";
-import cart from "@/images/icn settings icn-xs (7).png";
-import mail from "@/images/icn settings icn-xs (8).png";
-import { useState } from "react"; // Import useState for toggling hamburger menu
-
-export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State for toggling the menu
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); // Toggle the menu state on hamburger click
-  };
-
-  return (
-    <div className="lg:w-[1437px] lg:h-[58px] w-full h-[532px] lg:absolute lg:top-[70px]">
-      <div className="absolute left-[38px] flex items-center gap-[10px]">
-        <h3 className="font-Montserrat font-semibold leading-[32px] text-[24px] sm:hiddden">Bandage</h3>
-      </div>
-
-      {/* Desktop Menu */}
-      <div className="w-[1155px] h-[58px] absolute left-[265px] hidden lg:block">
-        <div className="w-[361px] h-[25px] absolute top-[20.5px] flex gap-[15px]">
-          <ul className="font-Montserrat font-semibold text-[14px] text-[#737373] gap-[15px] leading-[24px] flex justify-center">
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/shop">Shop</Link></li>
-            <li><Link href="/about">About</Link></li>
-            <li><Link href="/blog">Blog</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
-            <li><Link href="/pages">Pages</Link></li>
-          </ul>
-        </div>
-
-        {/* Login / Register section */}
-        <div className="w-[324px] h-[54px] absolute top-[2px] left-[832px] flex justify-between items-center">
-          <div className="w-[166px] h-[54px] p-[15px] flex items-center gap-[5px]">
-            <div className="w-[12px] h-[12px] mt-[6px]">
-              <Image src={user} alt="user" width={12} height={12} />
+import {
+    Search,
+    ShoppingCart,
+    User,
+    Menu,
+    X,
+    ChevronDown,
+    Phone,
+    Mail,
+  } from "lucide-react";
+  import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+  import React, { useState } from "react";
+import Link from "next/link";
+  export default function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+    const [searchOpen, setSearchOpen] = useState(false);
+    return (
+      <nav className="w-full">
+        {/* Promo Bar */}
+        <div className="bg-gray-900 text-white py-2 px-4">
+          <div className="container mx-auto flex flex-wrap justify-between items-center">
+            <div className="flex items-center space-x-4">
+              <a
+                href="tel:+12255550118"
+                className="flex items-center text-sm hover:text-gray-300"
+              >
+                <Phone size={14} className="mr-1" />
+                (225) 555-0118
+              </a>
+              <a
+                href="mailto:contact@example.com"
+                className="flex items-center text-sm hover:text-gray-300"
+              >
+                <Mail size={14} className="mr-1" />
+                contact@example.com
+              </a>
             </div>
-            <span className="w-[119px] h-[24px] font-Montserrat font-semibold text-[14px] leading-[24px] text-[#23A6F0]">
-              Login / Register
-            </span>
+  
+            <p className="hidden md:block text-sm">
+              Follow Us and get a chance to win 80% off
+            </p>
+  
+            <div className="flex items-center space-x-4">
+              <a aria-label="Facebook" className="hover:text-gray-300">
+                <FaFacebook size={16} />
+              </a>
+              <a aria-label="Twitter" className="hover:text-gray-300">
+                <FaTwitter size={16} />
+              </a>
+              <a aria-label="Instagram" className="hover:text-gray-300">
+                <FaInstagram size={16} />
+              </a>
+              <a aria-label="Youtube" className="hover:text-gray-300">
+                <FaYoutube size={16} />
+              </a>
+            </div>
           </div>
-
-          {/* Icons section */}
-          <ul className="flex gap-[15px] items-center">
-            <li>
-              <Image src={search} alt="search" width={16} height={16} />
-            </li>
-            <li>
-              <Image src={cart} alt="cart" width={16} height={16} />
-            </li>
-            <li>
-              <Image src={mail} alt="mail" width={16} height={16} />
-            </li>
-          </ul>
         </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <div className="lg:hidden w-full flex items-center justify-between p-4">
-        {/* Logo */}
-        <h3 className="font-Montserrat font-semibold leading-[32px] text-[24px]">Bandage</h3>
-
-        {/* Hamburger Icon */}
-        <div className="cursor-pointer" onClick={toggleMenu}>
-          <div className="w-[24px] h-[2px] bg-black mb-[5px]"></div>
-          <div className="w-[24px] h-[2px] bg-black mb-[5px]"></div>
-          <div className="w-[24px] h-[2px] bg-black"></div>
+  
+        {/* Main Navbar */}
+        <div className="border-b">
+          <div className="container mx-auto px-4">
+            <div className="flex justify-between items-center h-16">
+              {/* Logo */}
+              <a href="/" className="text-2xl font-bold">
+                Bandage
+              </a>
+  
+              {/* Desktop Navigation */}
+              <div className="hidden md:flex items-center space-x-8">
+                <a href="/" className="text-gray-700 hover:text-gray-900">
+                  Home
+                </a>
+  
+                <div className="relative group">
+                  <button className="flex items-center text-gray-700 hover:text-gray-900">
+                    Shop
+                    <ChevronDown size={16} className="ml-1" />
+                  </button>
+                  <div className="absolute top-full left-0 hidden group-hover:block w-48 bg-white shadow-lg rounded-md py-2">
+                    <a className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                      Category 1
+                    </a>
+                    <a className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                      Category 2
+                    </a>
+                    <a className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                      Category 3
+                    </a>
+                  </div>
+                </div>
+  
+                <Link href={"/about"} className="text-gray-700 hover:text-gray-900">About</Link>
+                <Link href={"/contact"} className="text-gray-700 hover:text-gray-900">Contact</Link>
+              </div>
+  
+              {/* Search, Cart, Account */}
+              <div className="flex items-center space-x-4">
+                <button
+                  onClick={() => setSearchOpen(!searchOpen)}
+                  className="p-2 hover:bg-gray-100 rounded-full"
+                  aria-label="Search"
+                >
+                  <Search size={20} />
+                </button>
+  
+                <a
+                  href="/cart"
+                  className="p-2 hover:bg-gray-100 rounded-full relative"
+                >
+                  <ShoppingCart size={20} />
+                  <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
+                    2
+                  </span>
+                </a>
+  
+                <a href="/account" className="p-2 hover:bg-gray-100 rounded-full">
+                  <User size={20} />
+                </a>
+  
+                {/* Mobile menu button */}
+                <button
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="md:hidden p-2 hover:bg-gray-100 rounded-full"
+                  aria-label="Menu"
+                >
+                  {isOpen ? <X size={20} /> : <Menu size={20} />}
+                </button>
+              </div>
+            </div>
+  
+            {/* Search Bar */}
+            {searchOpen && (
+              <div className="py-4 border-t">
+                <div className="max-w-3xl mx-auto">
+                  <input
+                    type="search"
+                    placeholder="Search products..."
+                    className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+              </div>
+            )}
+  
+            {/* Mobile Navigation */}
+            {isOpen && (
+              <div className="md:hidden border-t py-4">
+                <div className="flex flex-col space-y-4">
+                  <Link href="/" className="text-gray-700 hover:text-gray-900 px-4">
+                    Home
+                  </Link>
+                  <Link href={"/shop"} className="text-gray-700 hover:text-gray-900 px-4">Shop</Link>
+                  <Link href={"/about"} className="text-gray-700 hover:text-gray-900 px-4">About</Link>
+                  <Link href={"/contact"} className="text-gray-700 hover:text-gray-900 px-4">
+                    Contact
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      </nav>
+    );
+  }
 
-      {/* Mobile Menu Content */}
-      <div
-        className={`${
-          isMenuOpen ? "block" : "hidden"
-        } absolute bottom-0 w-full bg-[#252B42] p-4 flex flex-col items-center gap-4`}
-      >
-        <ul className="font-Montserrat font-semibold text-[14px] text-white leading-[24px] gap-4 flex flex-col items-center">
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/shop">Shop</Link></li>
-          <li><Link href="/about">About</Link></li>
-          <li><Link href="/blog">Blog</Link></li>
-          <li><Link href="/contact">Contact</Link></li>
-          <li><Link href="/pages">Pages</Link></li>
-        </ul>
-
-        {/* Close button */}
-        <button
-          onClick={toggleMenu}
-          className="text-white font-Montserrat text-[14px]"
-        >
-          Close Menu
-        </button>
-      </div>
-    </div>
-  );
-}
+  
