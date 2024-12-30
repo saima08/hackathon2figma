@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footerr";
 
 
+
 const products = [
   {
     id: 1,
