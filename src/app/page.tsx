@@ -2,8 +2,10 @@
 
 import { ArrowRight, ShoppingCart, Calendar, MessageSquare  } from "lucide-react";
 import React from "react";
-import Navbar from "./components/Navbar";
 import Footer from "./components/Footerr";
+import Navbar from "./components/Navbar";
+
+
 
 
 
@@ -77,7 +79,7 @@ export default function Hero() {
   return (
     <>
     <div>
-    <Navbar />
+    <Navbar/>
     </div>
 
     <section 
