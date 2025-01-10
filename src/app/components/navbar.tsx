@@ -11,6 +11,8 @@ import {
   import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
   import React, { useState } from "react";
 import Link from "next/link";
+
+
   export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [searchOpen, setSearchOpen] = useState(false);
